@@ -94,6 +94,7 @@
     "glyph": "S",
     "description": "روایت تخیلی از شهری که ساکنانش یک‌به‌یک بینایی خود را از دست می‌دهند؛ تمثیلی از فروپاشی اخلاق اجتماعی.",
     "pdf": "files/books/8/book.pdf",
+    "cover": "files/books/8/cover8.jpg",
     "fileSizeMB": 4,
     "addedDate": "2025-09-18"
   },
@@ -106,6 +107,7 @@
     "glyph": "چ",
     "description": "داستان عشق و سیاست در دل دهه‌های پرتلاطم ایران، نوشته‌ی بزرگ علوی.",
     "pdf": "files/books/9/book.pdf",
+    "cover": "files/books/9/cover9.jpg",
     "fileSizeMB": 3,
     "addedDate": "2025-09-20"
   },
@@ -118,6 +120,7 @@
     "glyph": "T",
     "description": "حماسه‌ی بزرگ تولستوی از جنگ‌های ناپلئون و سرنوشت چند خانواده‌ی روسی.",
     "pdf": "files/books/10/book.pdf",
+    "cover": "files/books/10/cover10.jpg",
     "fileSizeMB": 9,
     "addedDate": "2025-09-22"
   }
