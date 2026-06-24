@@ -116,19 +116,33 @@ function applySeekVisual(fraction){
 }
 function bindSeekDrag(wrap){
   if(!wrap) return;
-  function onMove(e){ Player.seekTo(applySeekVisual(fractionFromClientX(wrap, e.clientX))); }
+  let lastFraction = 0;
+  let wasPlayingBeforeScrub = false;
+
+  function onMove(e){
+    lastFraction = fractionFromClientX(wrap, e.clientX);
+    applySeekVisual(lastFraction);
+  }
   function onUp(){
     wrap.classList.remove('dragging');
-    Player.scrubbing = false;
-    Player.saveProgress();
     wrap.removeEventListener('pointermove', onMove);
     wrap.removeEventListener('pointerup', onUp);
     wrap.removeEventListener('pointercancel', onUp);
+
+    const duration = Player.audioEl.duration || 0;
+    Player.seekTo(lastFraction * duration);
+    Player.scrubbing = false;
+    Player.saveProgress();
+    if(wasPlayingBeforeScrub){
+      Player.audioEl.play().catch(() => {});
+    }
     renderMiniPlayer();
   }
   wrap.addEventListener('pointerdown', (e) => {
     if(!Player.audioEl.duration) return;
     e.preventDefault();
+    wasPlayingBeforeScrub = !Player.audioEl.paused;
+    if(wasPlayingBeforeScrub) Player.audioEl.pause();
     Player.scrubbing = true;
     wrap.classList.add('dragging');
     try{ wrap.setPointerCapture(e.pointerId); }catch(err){}

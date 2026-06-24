@@ -125,11 +125,13 @@ function bookCard(b){
   const [c1,c2] = paletteFor(b.id);
   const isFav = STORE.isFav(b.id);
   const href = `/books/${b.slug}/`;
+  const coverInner = b.cover
+    ? `<img src="/${b.cover}" alt="" loading="lazy">`
+    : `<span class="spine"></span><span class="glyph">${b.glyph}</span>`;
   return `
     <article class="book-card ${isFav?'is-fav':''}" style="--c1:${c1};--c2:${c2}">
       <a class="book-cover" href="${href}" aria-label="${b.title}">
-        <span class="spine"></span>
-        <span class="glyph">${b.glyph}</span>
+        ${coverInner}
       </a>
       <button class="bookmark-hit" data-fav="${b.id}" aria-label="افزودن به علاقه‌مندی"></button>
       <span class="bookmark">${ICONS.bookmark}</span>
@@ -339,23 +341,33 @@ function applySeekVisual(fraction){
 
 function bindSeekDrag(wrap){
   if(!wrap) return;
+  let lastFraction = 0;
+  let wasPlayingBeforeScrub = false;
+
   function onMove(e){
-    const fraction = fractionFromClientX(wrap, e.clientX);
-    const seconds = applySeekVisual(fraction);
-    Player.seekTo(seconds);
+    lastFraction = fractionFromClientX(wrap, e.clientX);
+    applySeekVisual(lastFraction); // فقط نمایش را آپدیت می‌کند، هنوز پخش واقعی جابه‌جا نمی‌شود
   }
   function onUp(e){
     wrap.classList.remove('dragging');
-    Player.scrubbing = false;
-    Player.saveProgress();
     wrap.removeEventListener('pointermove', onMove);
     wrap.removeEventListener('pointerup', onUp);
     wrap.removeEventListener('pointercancel', onUp);
+
+    const duration = Player.audioEl.duration || 0;
+    Player.seekTo(lastFraction * duration);
+    Player.scrubbing = false;
+    Player.saveProgress();
+    if(wasPlayingBeforeScrub){
+      Player.audioEl.play().catch(() => {});
+    }
     renderMiniPlayer();
   }
   wrap.addEventListener('pointerdown', (e) => {
     if(!Player.book || !Player.audioEl.duration) return;
     e.preventDefault();
+    wasPlayingBeforeScrub = !Player.audioEl.paused;
+    if(wasPlayingBeforeScrub) Player.audioEl.pause();
     Player.scrubbing = true;
     wrap.classList.add('dragging');
     try{ wrap.setPointerCapture(e.pointerId); }catch(err){}

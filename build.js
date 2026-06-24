@@ -176,9 +176,12 @@ function relatedBlock(items, baseUrlPrefix, currentId, titleKey){
   if(others.length === 0) return '';
   const cards = others.map(o => {
     const [c1, c2] = paletteFor(o.id);
+    const coverInner = o.cover
+      ? `<img src="/${o.cover}" alt="" loading="lazy">`
+      : o.glyph;
     return `
       <a class="related-card" href="/${baseUrlPrefix}/${o.slug}/">
-        <div class="related-cover" style="--c1:${c1};--c2:${c2}">${o.glyph}</div>
+        <div class="related-cover" style="--c1:${c1};--c2:${c2}">${coverInner}</div>
         <p class="related-title">${escapeHtml(o[titleKey])}</p>
       </a>`;
   }).join('');
@@ -189,9 +192,22 @@ function relatedBlock(items, baseUrlPrefix, currentId, titleKey){
     </div>`;
 }
 
+/* عکس جلد واقعی (اگر در books.json فیلد cover پر شده و فایل وجود دارد)
+   یا در غیر این صورت همان نشان رنگی حرف اول */
+function coverBlock(item){
+  if(item.cover && fs.existsSync(path.join(ROOT, item.cover))){
+    return `<img class="detail-cover" src="/${item.cover}" alt="جلد کتاب ${escapeHtml(item.title)}">`;
+  }
+  return `<div class="detail-glyph">${escapeHtml(item.glyph)}</div>`;
+}
+
 for(const b of books){
   const [c1, c2] = paletteFor(b.id);
   const canonical = `${DOMAIN}/books/${b.slug}/`;
+
+  if(b.cover && !fs.existsSync(path.join(ROOT, b.cover))){
+    console.warn(`⚠️  فایل کاور کتاب «${b.title}» پیدا نشد: ${b.cover}`);
+  }
 
   const bookJsonLd = {
     "@context": "https://schema.org",
@@ -204,6 +220,9 @@ for(const b of books){
     "inLanguage": "fa",
     "isPartOf": { "@type": "WebSite", "name": SITE.siteName, "url": DOMAIN + '/' }
   };
+  if(b.cover && fs.existsSync(path.join(ROOT, b.cover))){
+    bookJsonLd.image = `${DOMAIN}/${b.cover}`;
+  }
 
   const html = render(bookTpl, {
     TITLE: escapeHtml(b.title),
@@ -211,6 +230,7 @@ for(const b of books){
     GENRE: escapeHtml(b.genre),
     DESCRIPTION: escapeHtml(b.description || ''),
     GLYPH: escapeHtml(b.glyph),
+    COVER_BLOCK: coverBlock(b),
     PDF_PATH: b.pdf,
     FILE_SIZE: b.fileSizeMB || '?',
     BOOK_ID: b.id,
