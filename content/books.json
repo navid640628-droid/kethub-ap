@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "slug": "boof-e-koor",
+    "title": "بوف کور",
+    "author": "صادق هدایت",
+    "genre": "ادبیات فارسی",
+    "glyph": "ب",
+    "description": "رمانی تاریک و نمادین که هدایت آن را در سال‌های تنهایی پاریس نوشت؛ یکی از تأثیرگذارترین آثار ادبیات مدرن فارسی.",
+    "pdf": "files/books/1/book.pdf",
+    "fileSizeMB": 4,
+    "addedDate": "2025-09-01"
+  },
+  {
+    "id": 2,
+    "slug": "hame-mimirim-dar-jabhe-gharb",
+    "title": "همه می‌میریم در جبهه غرب",
+    "author": "اریش ماریا رمارک",
+    "genre": "رمان جنگ",
+    "glyph": "R",
+    "description": "روایتی از جنگ جهانی اول از زبان یک سرباز جوان آلمانی؛ یکی از مهم‌ترین رمان‌های ضدجنگ تاریخ ادبیات.",
+    "pdf": "files/books/2/book.pdf",
+    "fileSizeMB": 6,
+    "addedDate": "2025-09-03"
+  },
+  {
+    "id": 3,
+    "slug": "shazdeh-ehtejab",
+    "title": "شازده احتجاب",
+    "author": "هوشنگ گلشیری",
+    "genre": "ادبیات فارسی",
+    "glyph": "ش",
+    "description": "روایتی پیچیده و چندلایه از زوال یک خانواده‌ی اشرافی، نوشته‌ی هوشنگ گلشیری.",
+    "pdf": "files/books/3/book.pdf",
+    "fileSizeMB": 3,
+    "addedDate": "2025-09-05"
+  },
+  {
+    "id": 4,
+    "slug": "savushun",
+    "title": "سووشون",
+    "author": "سیمین دانشور",
+    "genre": "ادبیات فارسی",
+    "glyph": "س",
+    "description": "یکی از نخستین رمان‌های مدرن زنانه‌ی ایران، روایتی از شیراز در سال‌های اشغال متفقین.",
+    "pdf": "files/books/4/book.pdf",
+    "fileSizeMB": 5,
+    "addedDate": "2025-09-08"
+  },
+  {
+    "id": 5,
+    "slug": "biganeh",
+    "title": "بیگانه",
+    "author": "آلبر کامو",
+    "genre": "فلسفی",
+    "glyph": "K",
+    "description": "رمانی کوتاه و سرد درباره‌ی پوچی و بی‌تفاوتی، یکی از متن‌های پایه‌ی فلسفه‌ی اگزیستانسیالیسم.",
+    "pdf": "files/books/5/book.pdf",
+    "fileSizeMB": 2,
+    "addedDate": "2025-09-10"
+  },
+  {
+    "id": 6,
+    "slug": "kimiagar",
+    "title": "کیمیاگر",
+    "author": "پائولو کوئلیو",
+    "genre": "رمان",
+    "glyph": "C",
+    "description": "داستان چوپانی که برای رسیدن به رؤیایش سفر می‌کند؛ پرفروش‌ترین اثر کوئلیو در سطح جهان.",
+    "pdf": "files/books/6/book.pdf",
+    "fileSizeMB": 3,
+    "addedDate": "2025-09-12"
+  },
+  {
+    "id": 7,
+    "slug": "sad-sal-tanhayi",
+    "title": "صد سال تنهایی",
+    "author": "گابریل گارسیا مارکز",
+    "genre": "رئالیسم جادویی",
+    "glyph": "M",
+    "description": "تاریخ هفت نسل از خانواده‌ی بوئندیا در دهکده‌ی خیالی ماکوندو؛ شاهکار رئالیسم جادویی.",
+    "pdf": "files/books/7/book.pdf",
+    "fileSizeMB": 7,
+    "addedDate": "2025-09-15"
+  },
+  {
+    "id": 8,
+    "slug": "koori",
+    "title": "کوری",
+    "author": "ژوزه ساراماگو",
+    "genre": "فلسفی",
+    "glyph": "S",
+    "description": "روایت تخیلی از شهری که ساکنانش یک‌به‌یک بینایی خود را از دست می‌دهند؛ تمثیلی از فروپاشی اخلاق اجتماعی.",
+    "pdf": "files/books/8/book.pdf",
+    "fileSizeMB": 4,
+    "addedDate": "2025-09-18"
+  },
+  {
+    "id": 9,
+    "slug": "cheshmhayash",
+    "title": "چشمهایش",
+    "author": "بزرگ علوی",
+    "genre": "ادبیات فارسی",
+    "glyph": "چ",
+    "description": "داستان عشق و سیاست در دل دهه‌های پرتلاطم ایران، نوشته‌ی بزرگ علوی.",
+    "pdf": "files/books/9/book.pdf",
+    "fileSizeMB": 3,
+    "addedDate": "2025-09-20"
+  },
+  {
+    "id": 10,
+    "slug": "jang-o-solh",
+    "title": "جنگ و صلح",
+    "author": "لئو تولستوی",
+    "genre": "رمان جنگ",
+    "glyph": "T",
+    "description": "حماسه‌ی بزرگ تولستوی از جنگ‌های ناپلئون و سرنوشت چند خانواده‌ی روسی.",
+    "pdf": "files/books/10/book.pdf",
+    "fileSizeMB": 9,
+    "addedDate": "2025-09-22"
+  }
+]

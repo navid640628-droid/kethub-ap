@@ -1,0 +1,55 @@
+[
+  {
+    "id": 101,
+    "slug": "boof-e-koor-sedaa",
+    "title": "بوف کور",
+    "author": "صادق هدایت",
+    "glyph": "ب",
+    "description": "نسخه‌ی صوتی بوف کور، فصل‌به‌فصل، با صدای گروه کتاب‌باز.",
+    "addedDate": "2025-09-01",
+    "chapters": [
+      {"title": "فصل ۱", "file": "files/audio/101/ch1.mp3"},
+      {"title": "فصل ۲", "file": "files/audio/101/ch2.mp3"},
+      {"title": "فصل ۳", "file": "files/audio/101/ch3.mp3"}
+    ]
+  },
+  {
+    "id": 102,
+    "slug": "hame-mimirim-sedaa",
+    "title": "همه می‌میریم در جبهه غرب",
+    "author": "اریش ماریا رمارک",
+    "glyph": "R",
+    "description": "نسخه‌ی صوتی رمان جنگی رمارک، فصل‌به‌فصل.",
+    "addedDate": "2025-09-03",
+    "chapters": [
+      {"title": "فصل ۱", "file": "files/audio/102/ch1.mp3"},
+      {"title": "فصل ۲", "file": "files/audio/102/ch2.mp3"}
+    ]
+  },
+  {
+    "id": 103,
+    "slug": "kimiagar-sedaa",
+    "title": "کیمیاگر",
+    "author": "پائولو کوئلیو",
+    "glyph": "C",
+    "description": "نسخه‌ی صوتی کیمیاگر، فصل‌به‌فصل.",
+    "addedDate": "2025-09-12",
+    "chapters": [
+      {"title": "فصل ۱", "file": "files/audio/103/ch1.mp3"},
+      {"title": "فصل ۲", "file": "files/audio/103/ch2.mp3"}
+    ]
+  },
+  {
+    "id": 104,
+    "slug": "savushun-sedaa",
+    "title": "سووشون",
+    "author": "سیمین دانشور",
+    "glyph": "س",
+    "description": "نسخه‌ی صوتی سووشون، فصل‌به‌فصل.",
+    "addedDate": "2025-09-08",
+    "chapters": [
+      {"title": "فصل ۱", "file": "files/audio/104/ch1.mp3"},
+      {"title": "فصل ۲", "file": "files/audio/104/ch2.mp3"}
+    ]
+  }
+]

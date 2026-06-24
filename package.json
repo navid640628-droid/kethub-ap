@@ -1,0 +1,9 @@
+{
+  "name": "kethub-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "اپلیکیشن وب کتاب‌باز — کتاب، کتاب صوتی، پادکست و حاشیه‌های ادبی",
+  "scripts": {
+    "build": "node build.js"
+  }
+}

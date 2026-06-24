@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>{{SITE_NAME}} — {{SITE_DESCRIPTION}}</title>
+<meta name="description" content="{{SITE_DESCRIPTION}}">
+<link rel="canonical" href="{{DOMAIN}}/">
+<meta name="theme-color" content="{{THEME_COLOR}}">
+<link rel="manifest" href="/manifest.json">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{SITE_NAME}}">
+<meta property="og:description" content="{{SITE_DESCRIPTION}}">
+<meta property="og:url" content="{{DOMAIN}}/">
+<meta property="og:locale" content="{{LOCALE}}">
+<meta name="twitter:card" content="summary">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="{{SITE_NAME}}">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,{{APPLE_ICON_B64}}">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,{{FAVICON_B64}}">
+
+<script type="application/ld+json">
+{{WEBSITE_JSONLD}}
+</script>
+
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="app" id="app"></div>
+<div class="toast" id="toast"><div class="toast-inner" id="toastInner"></div></div>
+
+<script>window.__DATA__ = {{DATA_JSON}};</script>
+<script src="/js/icons.js"></script>
+<script src="/js/store.js"></script>
+<script src="/js/player.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

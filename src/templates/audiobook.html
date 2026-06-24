@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}} (کتاب صوتی) — {{AUTHOR}} | {{SITE_NAME}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="{{CANONICAL_URL}}">
+<meta name="theme-color" content="{{THEME_COLOR}}">
+<link rel="manifest" href="/manifest.json">
+
+<meta property="og:type" content="music.album">
+<meta property="og:title" content="{{TITLE}} (کتاب صوتی) — {{AUTHOR}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="{{CANONICAL_URL}}">
+<meta property="og:locale" content="{{LOCALE}}">
+<meta name="twitter:card" content="summary">
+
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,{{APPLE_ICON_B64}}">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,{{FAVICON_B64}}">
+
+<script type="application/ld+json">
+{{AUDIOBOOK_JSONLD}}
+</script>
+
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="detail-page">
+  <a class="detail-back" href="/"> {{ICON_BACK}} <span>بازگشت به کتاب‌باز</span></a>
+
+  <div class="detail-hero" style="--c1:{{COLOR1}};--c2:{{COLOR2}}">
+    <div class="detail-hero-inner">
+      <div class="detail-glyph">{{GLYPH}}</div>
+      <span class="detail-genre">کتاب صوتی · {{CHAPTER_COUNT}} فصل</span>
+      <h1 class="detail-title">{{TITLE}}</h1>
+      <p class="detail-author">{{AUTHOR}}</p>
+    </div>
+  </div>
+
+  <div class="detail-body">
+    <p class="detail-desc">{{DESCRIPTION}}</p>
+
+    <div class="detail-chapters">
+      <p class="detail-section-label">فصل‌ها</p>
+      <div class="chapter-list show" id="chapterList">
+        {{CHAPTERS_HTML}}
+      </div>
+    </div>
+
+    <div class="detail-actions">
+      <button class="cta-btn cta-secondary" id="favBtn" data-fav="{{BOOK_ID}}">{{ICON_HEART}}<span id="favLabel">افزودن به علاقه‌مندی‌ها</span></button>
+      <a class="cta-btn cta-secondary" href="{{TELEGRAM_URL}}" target="_blank" rel="noopener">{{ICON_TELEGRAM}}<span>کانال تلگرام کتاب‌باز</span></a>
+    </div>
+  </div>
+
+  {{RELATED_AUDIOBOOKS_BLOCK}}
+
+  <p class="site-footer">بخشی از <a href="/">{{SITE_NAME}}</a></p>
+</div>
+
+<div class="mini-player" id="miniPlayer"></div>
+<div class="toast" id="toast"><div class="toast-inner" id="toastInner"></div></div>
+
+<script>window.__BOOK__ = {{BOOK_JSON}};</script>
+<script src="/js/icons.js"></script>
+<script src="/js/store.js"></script>
+<script src="/js/player.js"></script>
+<script src="/js/detail-audiobook.js"></script>
+</body>
+</html>
