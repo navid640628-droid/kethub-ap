@@ -8,6 +8,7 @@
     "glyph": "ب",
     "description": "رمانی تاریک و نمادین که هدایت آن را در سال‌های تنهایی پاریس نوشت؛ یکی از تأثیرگذارترین آثار ادبیات مدرن فارسی.",
     "pdf": "files/books/1/book.pdf",
+    "cover": "files/books/1/cover1.jpg",
     "fileSizeMB": 4,
     "addedDate": "2025-09-01"
   },
@@ -20,6 +21,7 @@
     "glyph": "R",
     "description": "روایتی از جنگ جهانی اول از زبان یک سرباز جوان آلمانی؛ یکی از مهم‌ترین رمان‌های ضدجنگ تاریخ ادبیات.",
     "pdf": "files/books/2/book.pdf",
+    "cover": "files/books/2/cover2.jpg",
     "fileSizeMB": 6,
     "addedDate": "2025-09-03"
   },
@@ -45,6 +47,7 @@
     "glyph": "س",
     "description": "یکی از نخستین رمان‌های مدرن زنانه‌ی ایران، روایتی از شیراز در سال‌های اشغال متفقین.",
     "pdf": "files/books/4/book.pdf",
+    "cover": "files/books/4/cover4.jpg",
     "fileSizeMB": 5,
     "addedDate": "2025-09-08"
   },
@@ -70,6 +73,7 @@
     "glyph": "C",
     "description": "داستان چوپانی که برای رسیدن به رؤیایش سفر می‌کند؛ پرفروش‌ترین اثر کوئلیو در سطح جهان.",
     "pdf": "files/books/6/book.pdf",
+    "cover": "files/books/6/cover6.jpg",
     "fileSizeMB": 3,
     "addedDate": "2025-09-12"
   },
@@ -82,6 +86,7 @@
     "glyph": "M",
     "description": "تاریخ هفت نسل از خانواده‌ی بوئندیا در دهکده‌ی خیالی ماکوندو؛ شاهکار رئالیسم جادویی.",
     "pdf": "files/books/7/book.pdf",
+    "cover": "files/books/7/cover7.jpg",
     "fileSizeMB": 7,
     "addedDate": "2025-09-15"
   },
