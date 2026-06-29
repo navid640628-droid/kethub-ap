@@ -7,8 +7,7 @@
     "genre": "ادبیات فارسی",
     "glyph": "ب",
     "description": "رمانی تاریک و نمادین که هدایت آن را در سال‌های تنهایی پاریس نوشت؛ یکی از تأثیرگذارترین آثار ادبیات مدرن فارسی.",
-    "pdf": "files/books/1/book1.pdf",
-    "cover": "files/books/1/cover1.jpg",
+    "pdf": "files/books/1/book.pdf",
     "fileSizeMB": 4,
     "addedDate": "2025-09-01"
   },
@@ -20,8 +19,7 @@
     "genre": "رمان جنگ",
     "glyph": "R",
     "description": "روایتی از جنگ جهانی اول از زبان یک سرباز جوان آلمانی؛ یکی از مهم‌ترین رمان‌های ضدجنگ تاریخ ادبیات.",
-    "pdf": "files/books/2/book2.pdf",
-    "cover": "files/books/2/cover2.jpg",
+    "pdf": "files/books/2/book.pdf",
     "fileSizeMB": 6,
     "addedDate": "2025-09-03"
   },
@@ -33,8 +31,7 @@
     "genre": "ادبیات فارسی",
     "glyph": "ش",
     "description": "روایتی پیچیده و چندلایه از زوال یک خانواده‌ی اشرافی، نوشته‌ی هوشنگ گلشیری.",
-    "pdf": "files/books/3/book3.pdf",
-    "cover": "files/books/3/cover3.jpg",
+    "pdf": "files/books/3/book.pdf",
     "fileSizeMB": 3,
     "addedDate": "2025-09-05"
   },
@@ -46,8 +43,7 @@
     "genre": "ادبیات فارسی",
     "glyph": "س",
     "description": "یکی از نخستین رمان‌های مدرن زنانه‌ی ایران، روایتی از شیراز در سال‌های اشغال متفقین.",
-    "pdf": "files/books/4/book4.pdf",
-    "cover": "files/books/4/cover4.jpg",
+    "pdf": "files/books/4/book.pdf",
     "fileSizeMB": 5,
     "addedDate": "2025-09-08"
   },
@@ -59,8 +55,7 @@
     "genre": "فلسفی",
     "glyph": "K",
     "description": "رمانی کوتاه و سرد درباره‌ی پوچی و بی‌تفاوتی، یکی از متن‌های پایه‌ی فلسفه‌ی اگزیستانسیالیسم.",
-    "pdf": "files/books/5/book5.pdf",
-    "cover": "files/books/5/cover5.jpg",
+    "pdf": "files/books/5/book.pdf",
     "fileSizeMB": 2,
     "addedDate": "2025-09-10"
   },
@@ -72,8 +67,7 @@
     "genre": "رمان",
     "glyph": "C",
     "description": "داستان چوپانی که برای رسیدن به رؤیایش سفر می‌کند؛ پرفروش‌ترین اثر کوئلیو در سطح جهان.",
-    "pdf": "files/books/6/book6.pdf",
-    "cover": "files/books/6/cover6.jpg",
+    "pdf": "files/books/6/book.pdf",
     "fileSizeMB": 3,
     "addedDate": "2025-09-12"
   },
@@ -85,8 +79,7 @@
     "genre": "رئالیسم جادویی",
     "glyph": "M",
     "description": "تاریخ هفت نسل از خانواده‌ی بوئندیا در دهکده‌ی خیالی ماکوندو؛ شاهکار رئالیسم جادویی.",
-    "pdf": "files/books/7/book7.pdf",
-    "cover": "files/books/7/cover7.jpg",
+    "pdf": "files/books/7/book.pdf",
     "fileSizeMB": 7,
     "addedDate": "2025-09-15"
   },
@@ -98,8 +91,7 @@
     "genre": "فلسفی",
     "glyph": "S",
     "description": "روایت تخیلی از شهری که ساکنانش یک‌به‌یک بینایی خود را از دست می‌دهند؛ تمثیلی از فروپاشی اخلاق اجتماعی.",
-    "pdf": "files/books/8/book8.pdf",
-    "cover": "files/books/8/cover8.jpg",
+    "pdf": "files/books/8/book.pdf",
     "fileSizeMB": 4,
     "addedDate": "2025-09-18"
   },
@@ -111,8 +103,7 @@
     "genre": "ادبیات فارسی",
     "glyph": "چ",
     "description": "داستان عشق و سیاست در دل دهه‌های پرتلاطم ایران، نوشته‌ی بزرگ علوی.",
-    "pdf": "files/books/9/book9.pdf",
-    "cover": "files/books/9/cover9.jpg",
+    "pdf": "files/books/9/book.pdf",
     "fileSizeMB": 3,
     "addedDate": "2025-09-20"
   },
@@ -124,8 +115,7 @@
     "genre": "رمان جنگ",
     "glyph": "T",
     "description": "حماسه‌ی بزرگ تولستوی از جنگ‌های ناپلئون و سرنوشت چند خانواده‌ی روسی.",
-    "pdf": "files/books/10/book10.pdf",
-    "cover": "files/books/10/cover10.jpg",
+    "pdf": "files/books/10/book.pdf",
     "fileSizeMB": 9,
     "addedDate": "2025-09-22"
   }

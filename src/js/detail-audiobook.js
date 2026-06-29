@@ -65,39 +65,57 @@ document.querySelectorAll('.chapter-row').forEach(btn => {
   });
 });
 
-/* --- پلیر مینی --- */
+/* --- پلیر مینی ---
+   ساختار DOM فقط یک‌بار ساخته می‌شود؛ رندرهای بعدی فقط مقدارها را عوض
+   می‌کنند تا کلیک دکمه‌ها و کشیدن انگشت روی نوار وسط کار قطع نشود. */
+let miniPlayerBuilt = false;
+
+function buildMiniPlayerShell(el){
+  el.innerHTML = `
+    <div class="mini-cover" id="miniCover">${book.glyph}</div>
+    <div class="mini-info">
+      <p id="miniTitle"></p>
+      <span class="mini-time" id="mpTime"></span>
+      <div class="seek-wrap" id="seekWrap">
+        <div class="mini-progress"><div id="seekFill" style="width:0%"><span class="seek-thumb"></span></div></div>
+      </div>
+    </div>
+    <button class="mini-btn" id="mpBack" aria-label="۱۵ ثانیه عقب">${ICONS.back15}</button>
+    <button class="mini-btn" id="mpToggle" aria-label="پخش/توقف">${ICONS.play}</button>
+    <button class="mini-btn" id="mpFwd" aria-label="۱۵ ثانیه جلو">${ICONS.fwd15}</button>
+    <button class="mini-btn close" id="mpClose" aria-label="بستن">${ICONS.close}</button>
+  `;
+  document.getElementById('mpToggle').addEventListener('click', () => Player.toggle());
+  document.getElementById('mpBack').addEventListener('click', () => Player.seekBy(-15));
+  document.getElementById('mpFwd').addEventListener('click', () => Player.seekBy(15));
+  document.getElementById('mpClose').addEventListener('click', () => Player.close());
+  bindSeekDrag(document.getElementById('seekWrap'));
+  miniPlayerBuilt = true;
+}
+
 function renderMiniPlayer(){
   const el = document.getElementById('miniPlayer');
   if(!el) return;
   if(!Player.book || Player.book.id !== book.id){
     el.classList.remove('show');
     el.innerHTML = '';
+    miniPlayerBuilt = false;
     return;
   }
+  if(!miniPlayerBuilt) buildMiniPlayerShell(el);
+  el.classList.add('show');
+
   const ch = book.chapters[Player.chapterIndex];
   const duration = Player.audioEl.duration || 0;
   const elapsed = Player.audioEl.currentTime || 0;
   const pct = duration > 0 ? Math.min(100, Math.round((elapsed/duration)*100)) : 0;
-  el.classList.add('show');
-  el.innerHTML = `
-    <div class="mini-cover">${book.glyph}</div>
-    <div class="mini-info">
-      <p>${book.title} · ${ch.title}</p>
-      <span class="mini-time" id="mpTime">${fmtTime(elapsed)} / ${duration ? fmtTime(duration) : '…'}</span>
-      <div class="seek-wrap" id="seekWrap">
-        <div class="mini-progress"><div id="seekFill" style="width:${pct}%"><span class="seek-thumb"></span></div></div>
-      </div>
-    </div>
-    <button class="mini-btn" id="mpBack" aria-label="۱۵ ثانیه عقب">${ICONS.back15}</button>
-    <button class="mini-btn" id="mpToggle" aria-label="پخش/توقف">${Player.playing ? ICONS.pause : ICONS.play}</button>
-    <button class="mini-btn" id="mpFwd" aria-label="۱۵ ثانیه جلو">${ICONS.fwd15}</button>
-    <button class="mini-btn close" id="mpClose" aria-label="بستن">${ICONS.close}</button>
-  `;
-  document.getElementById('mpToggle').onclick = () => Player.toggle();
-  document.getElementById('mpBack').onclick = () => Player.seekBy(-15);
-  document.getElementById('mpFwd').onclick = () => Player.seekBy(15);
-  document.getElementById('mpClose').onclick = () => Player.close();
-  bindSeekDrag(document.getElementById('seekWrap'));
+
+  document.getElementById('miniTitle').textContent = `${book.title} · ${ch.title}`;
+  document.getElementById('mpTime').textContent = `${fmtTime(elapsed)} / ${duration ? fmtTime(duration) : '…'}`;
+  if(!Player.scrubbing){
+    document.getElementById('seekFill').style.width = pct + '%';
+  }
+  document.getElementById('mpToggle').innerHTML = Player.playing ? ICONS.pause : ICONS.play;
 }
 
 function fractionFromClientX(wrap, clientX){

@@ -284,14 +284,47 @@ function refreshAudiobooksRowIfActive(){
   }
 }
 
+let miniPlayerBuilt = false;
+
+function buildMiniPlayerShell(el){
+  el.innerHTML = `
+    <div class="mini-cover" id="miniCover"></div>
+    <div class="mini-info">
+      <p id="miniTitle"></p>
+      <span class="mini-time" id="mpTime"></span>
+      <div class="seek-wrap" id="seekWrap">
+        <div class="mini-progress"><div id="seekFill" style="width:0%"><span class="seek-thumb" id="seekThumb"></span></div></div>
+      </div>
+    </div>
+    <button class="mini-btn" id="mpBack" aria-label="۱۵ ثانیه عقب">${ICONS.back15}</button>
+    <button class="mini-btn" id="mpToggle" aria-label="پخش/توقف">${ICONS.play}</button>
+    <button class="mini-btn" id="mpFwd" aria-label="۱۵ ثانیه جلو">${ICONS.fwd15}</button>
+    <button class="mini-btn close" id="mpClose" aria-label="بستن">${ICONS.close}</button>
+  `;
+  document.getElementById('mpToggle').addEventListener('click', () => Player.toggle());
+  document.getElementById('mpBack').addEventListener('click', () => Player.seekBy(-15));
+  document.getElementById('mpFwd').addEventListener('click', () => Player.seekBy(15));
+  document.getElementById('mpClose').addEventListener('click', () => Player.close());
+  bindSeekDrag(document.getElementById('seekWrap'));
+  miniPlayerBuilt = true;
+}
+
+/* این تابع ساختار پلیر مینی را فقط یک‌بار می‌سازد و در رندرهای بعدی فقط
+   مقدارها (زمان، درصد نوار، آیکن پخش/توقف) را آپدیت می‌کند — نه کل DOM را.
+   این مهم است چون اگر کل innerHTML هر چند ثانیه بازسازی شود، هم کلیک روی
+   دکمه‌ها گاهی گم می‌شود و هم کشیدن انگشت روی نوار پیشرفت قطع می‌شود. */
 function renderMiniPlayer(){
   const el = document.getElementById('miniPlayer');
   if(!el) return;
   if(!Player.book){
     el.classList.remove('show');
     el.innerHTML = '';
+    miniPlayerBuilt = false;
     return;
   }
+  if(!miniPlayerBuilt) buildMiniPlayerShell(el);
+  el.classList.add('show');
+
   const b = Player.book;
   const ch = b.chapters[Player.chapterIndex];
   const duration = Player.audioEl.duration || 0;
@@ -300,26 +333,14 @@ function renderMiniPlayer(){
   const [c1,c2] = paletteFor(b.id);
   el.style.setProperty('--c1', c1);
   el.style.setProperty('--c2', c2);
-  el.classList.add('show');
-  el.innerHTML = `
-    <div class="mini-cover" style="--c1:${c1};--c2:${c2}">${b.glyph}</div>
-    <div class="mini-info">
-      <p>${b.title} · ${ch.title}</p>
-      <span class="mini-time" id="mpTime">${fmtTime(elapsed)} / ${duration ? fmtTime(duration) : '…'}</span>
-      <div class="seek-wrap" id="seekWrap">
-        <div class="mini-progress"><div id="seekFill" style="width:${pct}%"><span class="seek-thumb" id="seekThumb"></span></div></div>
-      </div>
-    </div>
-    <button class="mini-btn" id="mpBack" aria-label="۱۵ ثانیه عقب">${ICONS.back15}</button>
-    <button class="mini-btn" id="mpToggle" aria-label="پخش/توقف">${Player.playing ? ICONS.pause : ICONS.play}</button>
-    <button class="mini-btn" id="mpFwd" aria-label="۱۵ ثانیه جلو">${ICONS.fwd15}</button>
-    <button class="mini-btn close" id="mpClose" aria-label="بستن">${ICONS.close}</button>
-  `;
-  document.getElementById('mpToggle').onclick = () => Player.toggle();
-  document.getElementById('mpBack').onclick = () => Player.seekBy(-15);
-  document.getElementById('mpFwd').onclick = () => Player.seekBy(15);
-  document.getElementById('mpClose').onclick = () => Player.close();
-  bindSeekDrag(document.getElementById('seekWrap'));
+
+  document.getElementById('miniCover').textContent = b.glyph;
+  document.getElementById('miniTitle').textContent = `${b.title} · ${ch.title}`;
+  document.getElementById('mpTime').textContent = `${fmtTime(elapsed)} / ${duration ? fmtTime(duration) : '…'}`;
+  if(!Player.scrubbing){
+    document.getElementById('seekFill').style.width = pct + '%';
+  }
+  document.getElementById('mpToggle').innerHTML = Player.playing ? ICONS.pause : ICONS.play;
 }
 
 function fractionFromClientX(wrap, clientX){

@@ -51,20 +51,5 @@
       {"title": "فصل ۱", "file": "files/audio/104/ch1.mp3"},
       {"title": "فصل ۲", "file": "files/audio/104/ch2.mp3"}
     ]
-  },
-{
-  "id": 105,
-  "slug": "maghazeh-khodkoshi",
-  "title": "مغازه خودکشی",
-  "author": "ژان توله",
-  "glyph": "م",
-  "description": "داستانی طنز و سیاه از خانواده‌ای که نسل‌اندرنسل مغازه‌ای برای فروش لوازم خودکشی اداره می‌کنند، تا روزی که تولد فرزندی شاد و پرانرژی همه‌چیز را زیر سؤال می‌برد.",
-  "addedDate": "2025-10-05",
-  "chapters": [
-    {"title": "فصل ۱", "file": "files/audio/105/ch1.mp3"},
-    {"title": "فصل ۲", "file": "files/audio/105/ch2.mp3"},
-    {"title": "فصل ۳", "file": "files/audio/105/ch3.mp3"},
-    {"title": "فصل ۴", "file": "files/audio/105/ch4.mp3"}
-  ]
-}
+  }
 ]
