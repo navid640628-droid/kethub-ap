@@ -4,6 +4,11 @@
   "private": true,
   "description": "اپلیکیشن وب کتاب‌باز — کتاب، کتاب صوتی، پادکست و حاشیه‌های ادبی",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.105.0"
   }
 }
